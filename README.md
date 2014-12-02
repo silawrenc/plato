@@ -3,7 +3,7 @@ Plato
 
 ### Basic usage
 
-Call `validate($value, $schema)` to validate a value, where `schema` is a callable or array of callables, each returning any string message on validation failure, or `null` on success.
+Call `validate($value, $schema)` to validate a value, where `$schema` is a callable or array of callables, each returning any string message on validation failure, or `null` on success.
 
 ````php
 //returns null
