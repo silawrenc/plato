@@ -2,6 +2,8 @@
 
 namespace plato;
 
+use plato\test\ValidatorTest;
+
 class MathValidatorsTest extends ValidatorTest
 {
     public function testData()

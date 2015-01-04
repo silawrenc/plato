@@ -2,11 +2,11 @@
 
 namespace plato;
 
-use PHPUnit_Framework_TestCase as TestCase;
+use plato\test\ValidatorTest;
 use DateTime;
 use DateTimeZone;
 
-class DateValidatorsTest extends TestCase
+class DateValidatorsTest extends ValidatorTest
 {
     public function testData()
     {

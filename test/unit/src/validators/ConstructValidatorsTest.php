@@ -2,9 +2,9 @@
 
 namespace plato;
 
-use PHPUnit_Framework_TestCase as TestCase;
+use plato\test\ValidatorTest;
 
-class ConstructValidatorsTest extends TestCase
+class ConstructValidatorsTest extends ValidatorTest
 {
     public function testData()
     {

@@ -17,9 +17,16 @@
 
     "autoload": {
         "psr-4": {
-            "plato\\": "./test/lib"
+            "plato\\test\\": "./test/lib"
         },
         "files": [
+            "./src/assert.php",
+            "./src/callables.php",
+            "./src/evaluate.php",
+            "./src/message.php",
+            "./src/rule.php",
+            "./src/validate.php",
+            "./src/PlatoException.php",
             "./src/validators/array.php",
             "./src/validators/boolean.php",
             "./src/validators/construct.php",
@@ -27,18 +34,12 @@
             "./src/validators/generic.php",
             "./src/validators/math.php",
             "./src/validators/multiple.php",
-            "./src/validators/string.php",
-            "./src/rule.php",
-            "./src/message.php",
-            "./src/evaluate.php",
-            "./src/validate.php",
-            "./src/assert.php",
-            "./src/PlatoException.php"
+            "./src/validators/string.php"
         ]
     },
 
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.4"
     },
 
     "require-dev": {

@@ -24,9 +24,27 @@ class RuleTest extends TestCase
         $this->assertEquals(null, $rule($data));
     }
 
+    public function testRuleSingleKeyArrayCallableFails()
+    {
+        $rule = rule('name.required' , 'name', $this->getArrayCallable());
+
+        $data = ['foo' => 'bar'];
+
+        $this->assertEquals('name.required', $rule($data));
+    }
+
+    public function testRuleSingleKeyArrayCallablePasses()
+    {
+        $rule = rule('name.required' , 'name', $this->getArrayCallable());
+
+        $data = ['name' => 'jimmy'];
+
+        $this->assertEquals(null, $rule($data));
+    }
+
     public function testRuleSingleKeyMultiFunctionsFails()
     {
-        $rule = rule('name.required' , 'name', [required(), minlength(6)]);
+        $rule = rule('name.required' , 'name', [required(), minlength(6), $this->getArrayCallable()]);
 
         $data = ['name' => 'bar'];
 
@@ -35,7 +53,7 @@ class RuleTest extends TestCase
 
     public function testRuleSingleKeyMultiFunctionsPasses()
     {
-        $rule = rule('name.required' , 'name', [required(), minlength(6)]);
+        $rule = rule('name.required' , 'name', [required(), minlength(6), $this->getArrayCallable()]);
 
         $data = ['name' => 'Cuthbert'];
 
@@ -76,5 +94,10 @@ class RuleTest extends TestCase
         $data = ['first' => 1, 'second' => 2];
 
         $this->assertEquals(null, $rule($data));
+    }
+
+    protected function getArrayCallable()
+    {
+        return ['plato\test\DummyObject', 'required'];
     }
 }

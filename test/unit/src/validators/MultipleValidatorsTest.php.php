@@ -2,6 +2,8 @@
 
 namespace plato;
 
+use plato\test\ValidatorTest;
+
 class MultipleValidatorsTest extends ValidatorTest
 {
     /**

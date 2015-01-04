@@ -1,6 +1,6 @@
 <?php
 
-namespace plato;
+namespace plato\test;
 
 use PHPUnit_Framework_TestCase as TestCase;
 

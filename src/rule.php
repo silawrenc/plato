@@ -4,7 +4,6 @@ namespace plato;
 
 function rule($message, $keys, $rules) {
     $keys = (array) $keys;
-    $rules = (array) $rules;
     $message = (string) $message;
 
     return function (array $data) use ($message, $keys, $rules) {

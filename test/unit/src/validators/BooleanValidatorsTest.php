@@ -2,9 +2,9 @@
 
 namespace plato;
 
-use PHPUnit_Framework_TestCase as TestCase;
+use plato\test\ValidatorTest;
 
-class BooleanValidatorsTest extends TestCase
+class BooleanValidatorsTest extends ValidatorTest
 {
     public function testData()
     {
@@ -12,7 +12,7 @@ class BooleanValidatorsTest extends TestCase
             [istrue(), 1, false],
             [istrue(), true, true],
             [istrueish(), 0, false],
-            [istrueish(), 'foo', false],
+            [istrueish(), 'foo', true],
             [isfalse(), 0, false],
             [isfalse(), false, true],
             [isfalsy(), 'bananas', false],
